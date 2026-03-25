@@ -97,4 +97,53 @@ export default function Home() {
           <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 text-teal-950">MALPE <br /> <span className="text-teal-800/60 font-black">SIGNATURE</span></h2>
           
           <Link href="/order">
-            <button className="px-12 py-4 border border-teal-900/20 bg-teal-900/10 backdrop-blur-md text-teal
+            <button className="px-12 py-4 border border-teal-900/20 bg-teal-900/10 backdrop-blur-md text-teal-950 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-teal-900 hover:text-white transition-all rounded-full">
+              Order Malpe Catch
+            </button>
+          </Link>
+        </div>
+      </section>
+
+      {/* SECTION 4: ANDAMAN (Oceanic Theme) */}
+      <section className="relative h-screen w-full overflow-hidden border-t border-teal-100 bg-teal-50">
+        <div className="absolute inset-0 z-0">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
+            <source src={ANDAMAN_VIDEO} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-teal-50 via-transparent to-teal-50" />
+        </div>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+          <div className="mb-6 px-5 py-1.5 border border-orange-300/30 rounded-full bg-orange-500/10 backdrop-blur-md">
+            <span className="text-orange-600 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
+          </div>
+          <span className="text-teal-900/40 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Deep Sea Treasures</span>
+          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-teal-950">ANDAMAN <br /> <span className="font-black text-teal-900/60">RESERVE</span></h2>
+          <button className="px-12 py-4 border border-teal-200 text-teal-300 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
+            Notify Me
+          </button>
+        </div>
+      </section>
+
+      {/* SECTION 5: RIVER (Oceanic Theme) */}
+      <section className="relative h-screen w-full overflow-hidden border-t border-teal-100 bg-teal-50">
+        <div className="absolute inset-0 z-0">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
+            <source src={RIVER_VIDEO} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-teal-50 via-transparent to-teal-50" />
+        </div>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+          <div className="mb-6 px-5 py-1.5 border border-orange-300/30 rounded-full bg-orange-500/10 backdrop-blur-md">
+            <span className="text-orange-600 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
+          </div>
+          <span className="text-teal-900/40 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Freshwater Harvest</span>
+          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-teal-950">RIVER <br /> <span className="font-black text-teal-900/60">CATCH</span></h2>
+          <button className="px-12 py-4 border border-teal-200 text-teal-300 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
+            Notify Me
+          </button>
+        </div>
+      </section>
+
+    </main>
+  );
+}
