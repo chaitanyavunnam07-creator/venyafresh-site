@@ -20,7 +20,7 @@ export default function Home() {
           >
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
-          {/* Oceanic Gradient Overlay */}
+          {/* Oceanic Gradient Overlay - Smooth transition to the teal background */}
           <div className="absolute inset-0 bg-gradient-to-t from-teal-50 via-teal-50/20 to-transparent" />
         </div>
 
