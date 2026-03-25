@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Search, ShoppingBag, Menu } from "lucide-react";
 import Link from "next/link";
 
@@ -13,7 +14,7 @@ export default function Home() {
   return (
     <main className="w-full bg-teal-50 text-teal-950 selection:bg-orange-200 overflow-x-hidden scroll-smooth">
       
-      {/* 1. NAVIGATION (Oceanic Glass) */}
+      {/* 1. NAVIGATION */}
       <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 pt-10 pb-10 bg-gradient-to-b from-teal-50/90 via-teal-50/40 to-transparent backdrop-blur-sm">
         <div className="flex w-1/3 justify-start">
           <button className="text-teal-900/80 hover:text-orange-600 transition-colors">
@@ -33,7 +34,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* SECTION 1: HERO (Oceanic Theme) */}
+      {/* SECTION 1: HERO */}
       <section className="relative h-screen w-full overflow-hidden bg-teal-100">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-70 scale-105">
@@ -60,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2: CONVENIENCE (Oceanic Theme) */}
+      {/* SECTION 2: CONVENIENCE */}
       <section className="relative min-h-screen w-full overflow-hidden border-t border-teal-100 bg-white pt-48 pb-24">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-20 grayscale">
@@ -84,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3: MALPE (Oceanic Theme) */}
+      {/* SECTION 3: MALPE */}
       <section className="relative h-screen w-full overflow-hidden border-t border-teal-100 bg-teal-50">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-60">
@@ -104,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: ANDAMAN (Oceanic Theme) */}
+      {/* SECTION 4: ANDAMAN */}
       <section className="relative h-screen w-full overflow-hidden border-t border-teal-100 bg-teal-50">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
@@ -124,7 +125,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5: RIVER (Oceanic Theme) */}
+      {/* SECTION 5: RIVER */}
       <section className="relative h-screen w-full overflow-hidden border-t border-teal-100 bg-teal-50">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
