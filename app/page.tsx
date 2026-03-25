@@ -17,19 +17,19 @@ export default function Home() {
       {/* 1. NAVIGATION */}
       <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 pt-10 pb-10 bg-gradient-to-b from-teal-50/90 via-teal-50/40 to-transparent backdrop-blur-sm">
         <div className="flex w-1/3 justify-start">
-          <button className="text-teal-900/80 hover:text-orange-600 transition-colors">
+          <button className="text-orange-300 hover:text-teal-950 transition-colors">
             <Menu size={24} strokeWidth={1.5} />
           </button>
         </div>
         <div className="absolute left-1/2 top-10 -translate-x-1/2 flex items-center text-2xl font-serif italic tracking-tight">
-          <span className="text-orange-500 font-bold">Venya</span>
+          <span className="text-orange-400 font-bold">Venya</span>
           <span className="text-teal-900/60 ml-0.5">Fresh</span>
         </div>
-        <div className="flex w-1/3 justify-end gap-5 items-center text-teal-900/80">
+        <div className="flex w-1/3 justify-end gap-5 items-center text-orange-300">
           <Search size={22} strokeWidth={1.5} />
           <div className="relative">
             <ShoppingBag size={22} strokeWidth={1.5} />
-            <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-[8px] font-black h-4 w-4 flex items-center justify-center rounded-full">0</span>
+            <span className="absolute -top-1 -right-1 bg-orange-400 text-black text-[8px] font-black h-4 w-4 flex items-center justify-center rounded-full">0</span>
           </div>
         </div>
       </nav>
@@ -43,18 +43,18 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-teal-50 via-transparent to-teal-50" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="flex flex-col mb-6">
+          <h1 className="flex flex-col mb-6 drop-shadow-xl">
             <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-teal-950">NO SMELL.</span>
             <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-teal-950">NO MESS.</span>
             <div className="flex items-center justify-center gap-2 py-1">
-              <span className="text-[8vw] md:text-6xl text-orange-500 italic font-serif lowercase">just</span>
-              <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-teal-900">FRESH</span>
+              <span className="text-[8vw] md:text-6xl text-orange-400 italic font-serif lowercase">just</span>
+              <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-teal-950">FRESH</span>
             </div>
             <span className="text-[12vw] md:text-8xl font-black tracking-tighter uppercase leading-[0.8] text-teal-900">SEAFOOD.</span>
           </h1>
           
           <Link href="/order">
-            <button className="px-12 py-3.5 bg-teal-900 text-teal-50 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-orange-500 hover:text-white transition-all shadow-lg rounded-full">
+            <button className="px-12 py-3.5 bg-orange-300 text-black text-[10px] font-black uppercase tracking-[0.4em] hover:bg-teal-900 hover:text-white transition-all shadow-xl rounded-full">
               Order Prawns & Fish
             </button>
           </Link>
@@ -70,16 +70,16 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
         </div>
         <div className="relative z-10 flex flex-col items-center justify-start text-center px-8">
-          <h2 className="text-orange-500 text-[10px] font-bold tracking-[0.6em] mb-4 uppercase">THE CONVENIENCE FACTOR</h2>
+          <h2 className="text-orange-400 text-[10px] font-bold tracking-[0.6em] mb-4 uppercase">THE CONVENIENCE FACTOR</h2>
           <h3 className="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase mb-16 text-teal-950">KITCHEN READY, <br /> COASTAL FRESH</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl w-full">
             <div className="border-l border-orange-400/50 pl-6 text-left">
               <h4 className="text-teal-900 text-xs font-bold uppercase italic font-serif mb-2">Zero Preparation</h4>
-              <p className="text-teal-700/60 text-[10px] uppercase font-bold tracking-wider">De-veined prawns and descaled fish. Open the pack and start cooking.</p>
+              <p className="text-zinc-500 text-[10px] uppercase font-bold">De-veined prawns and descaled fish. Open the pack and start cooking.</p>
             </div>
-            <div className="border-l border-teal-200 pl-6 text-left">
+            <div className="border-l border-zinc-400 pl-6 text-left">
               <h4 className="text-teal-900 text-xs font-bold uppercase italic font-serif mb-2">Odor-Lock Tech</h4>
-              <p className="text-teal-700/60 text-[10px] uppercase font-bold tracking-wider">Vacuum sealed at sub-zero temperatures to ensure your fridge stays fresh.</p>
+              <p className="text-zinc-500 text-[10px] uppercase font-bold">Vacuum sealed at sub-zero temperatures to ensure your fridge stays fresh.</p>
             </div>
           </div>
         </div>
@@ -94,11 +94,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-teal-50/80 via-transparent to-teal-50" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <span className="text-orange-600 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">The Coastal Pride</span>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 text-teal-950">MALPE <br /> <span className="text-teal-800/60 font-black">SIGNATURE</span></h2>
+          <span className="text-orange-400 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">The Coastal Pride</span>
+          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 text-teal-950">MALPE <br /> <span className="text-orange-100 font-black">SIGNATURE</span></h2>
           
           <Link href="/order">
-            <button className="px-12 py-4 border border-teal-900/20 bg-teal-900/10 backdrop-blur-md text-teal-950 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-teal-900 hover:text-white transition-all rounded-full">
+            <button className="px-12 py-4 border border-orange-300/40 bg-orange-300/10 backdrop-blur-md text-orange-400 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-orange-300 hover:text-black transition-all rounded-full">
               Order Malpe Catch
             </button>
           </Link>
@@ -114,12 +114,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-teal-50 via-transparent to-teal-50" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <div className="mb-6 px-5 py-1.5 border border-orange-300/30 rounded-full bg-orange-500/10 backdrop-blur-md">
-            <span className="text-orange-600 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
+          <div className="mb-6 px-5 py-1.5 border border-orange-300/30 rounded-full bg-orange-300/10 backdrop-blur-md">
+            <span className="text-orange-200 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
           </div>
-          <span className="text-teal-900/40 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Deep Sea Treasures</span>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-teal-950">ANDAMAN <br /> <span className="font-black text-teal-900/60">RESERVE</span></h2>
-          <button className="px-12 py-4 border border-teal-200 text-teal-300 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
+          <span className="text-zinc-500 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Deep Sea Treasures</span>
+          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-teal-950">ANDAMAN <br /> <span className="font-black text-zinc-500">RESERVE</span></h2>
+          <button className="px-12 py-4 border border-zinc-300 text-zinc-400 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
             Notify Me
           </button>
         </div>
@@ -134,12 +134,12 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-teal-50 via-transparent to-teal-50" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <div className="mb-6 px-5 py-1.5 border border-orange-300/30 rounded-full bg-orange-500/10 backdrop-blur-md">
-            <span className="text-orange-600 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
+          <div className="mb-6 px-5 py-1.5 border border-orange-300/30 rounded-full bg-orange-300/10 backdrop-blur-md">
+            <span className="text-orange-200 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
           </div>
-          <span className="text-teal-900/40 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Freshwater Harvest</span>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-teal-950">RIVER <br /> <span className="font-black text-teal-900/60">CATCH</span></h2>
-          <button className="px-12 py-4 border border-teal-200 text-teal-300 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
+          <span className="text-zinc-500 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Freshwater Harvest</span>
+          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-teal-950">RIVER <br /> <span className="font-black text-zinc-500">CATCH</span></h2>
+          <button className="px-12 py-4 border border-zinc-300 text-zinc-400 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
             Notify Me
           </button>
         </div>
