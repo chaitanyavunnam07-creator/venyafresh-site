@@ -12,45 +12,63 @@ export default function Home() {
   const RIVER_VIDEO = "https://res.cloudinary.com/demo/video/upload/river_flow.mp4";
 
   return (
-    <main className="w-full bg-[#0B1F2A] text-white selection:bg-sky-400/30 overflow-x-hidden scroll-smooth">
+    <main className="w-full bg-[#0B1F2A] text-white overflow-x-hidden scroll-smooth">
       
-      {/* 1. NAVIGATION */}
-      <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 pt-10 pb-10 bg-gradient-to-b from-[#0B1F2A]/95 via-[#0B1F2A]/60 to-transparent backdrop-blur-sm">
+      {/* 1. NAVIGATION (NOW FULLY TRANSPARENT) */}
+      <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 pt-10 pb-10 bg-transparent">
+        
         <div className="flex w-1/3 justify-start">
-          <button className="text-slate-300 hover:text-white transition-colors">
+          <button className="text-white hover:text-sky-400 transition-colors">
             <Menu size={24} strokeWidth={1.5} />
           </button>
         </div>
+
+        {/* LOGO UPDATED */}
         <div className="absolute left-1/2 top-10 -translate-x-1/2 flex items-center text-2xl font-serif italic tracking-tight">
           <span className="text-white font-bold">Venya</span>
-          <span className="text-slate-400 ml-0.5">Fresh</span>
+          <span className="text-sky-400 ml-1">Fresh</span>
         </div>
-        <div className="flex w-1/3 justify-end gap-5 items-center text-slate-300">
+
+        <div className="flex w-1/3 justify-end gap-5 items-center text-white">
           <Search size={22} strokeWidth={1.5} />
           <div className="relative">
             <ShoppingBag size={22} strokeWidth={1.5} />
-            <span className="absolute -top-1 -right-1 bg-sky-400 text-[#0B1F2A] text-[8px] font-black h-4 w-4 flex items-center justify-center rounded-full">0</span>
+            <span className="absolute -top-1 -right-1 bg-sky-400 text-[#0B1F2A] text-[8px] font-black h-4 w-4 flex items-center justify-center rounded-full">
+              0
+            </span>
           </div>
         </div>
       </nav>
 
-      {/* SECTION 1: HERO */}
-      <section className="relative h-screen w-full overflow-hidden bg-[#0F2A38]">
+      {/* SECTION 1: HERO (VIDEO ONLY, NO COLOR OVERLAY) */}
+      <section className="relative h-screen w-full overflow-hidden">
+        
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-70 scale-105">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F2A] via-transparent to-[#0B1F2A]" />
+          {/* ❌ REMOVED COLOR OVERLAY */}
         </div>
+
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="flex flex-col mb-6 drop-shadow-xl">
-            <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">NO SMELL.</span>
-            <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">NO MESS.</span>
+          <h1 className="flex flex-col mb-6 drop-shadow-2xl">
+            <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
+              NO SMELL.
+            </span>
+            <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
+              NO MESS.
+            </span>
             <div className="flex items-center justify-center gap-2 py-1">
-              <span className="text-[8vw] md:text-6xl text-sky-400 italic font-serif lowercase">just</span>
-              <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">FRESH</span>
+              <span className="text-[8vw] md:text-6xl text-sky-400 italic font-serif lowercase">
+                just
+              </span>
+              <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
+                FRESH
+              </span>
             </div>
-            <span className="text-[12vw] md:text-8xl font-black tracking-tighter uppercase leading-[0.8] text-slate-300">SEAFOOD.</span>
+            <span className="text-[12vw] md:text-8xl font-black tracking-tighter uppercase leading-[0.8] text-white">
+              SEAFOOD.
+            </span>
           </h1>
           
           <Link href="/order">
@@ -61,7 +79,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2: CONVENIENCE */}
+      {/* KEEP REST EXACTLY SAME */}
+
+      {/* SECTION 2 */}
       <section className="relative min-h-screen w-full overflow-hidden border-t border-slate-800 bg-[#111827] pt-48 pb-24">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-20 grayscale">
@@ -85,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3: MALPE */}
+      {/* SECTION 3 */}
       <section className="relative h-screen w-full overflow-hidden border-t border-slate-800 bg-[#0B1F2A]">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-60">
@@ -105,7 +125,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: ANDAMAN */}
+      {/* SECTION 4 */}
       <section className="relative h-screen w-full overflow-hidden border-t border-slate-800 bg-[#0B1F2A]">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
@@ -125,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 5: RIVER */}
+      {/* SECTION 5 */}
       <section className="relative h-screen w-full overflow-hidden border-t border-slate-800 bg-[#0B1F2A]">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
