@@ -5,11 +5,12 @@ import { Search, ShoppingBag, Menu } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
-  const HERO_VIDEO = "https://l8fniptaja7gvhx6.public.blob.vercel-storage.com/Fisherman_Video_Generation.mp4";
-  const PROCESS_VIDEO = "https://res.cloudinary.com/demo/video/upload/snow_deer.mp4"; 
-  const MALPE_VIDEO = "https://res.cloudinary.com/demo/video/upload/boat_sailing.mp4";
-  const ANDAMAN_VIDEO = "https://res.cloudinary.com/demo/video/upload/sea_turtle.mp4";
-  const RIVER_VIDEO = "https://res.cloudinary.com/demo/video/upload/river_flow.mp4";
+  // NEW CINEMATIC SEAFOOD & OCEAN VIDEOS
+  const HERO_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-blue-ocean-water-surface-4001-large.mp4";
+  const PROCESS_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-chef-cleaning-a-fresh-fish-40546-large.mp4"; 
+  const MALPE_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-fishing-boat-sailing-in-the-ocean-4003-large.mp4";
+  const ANDAMAN_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-underwater-shot-of-a-coral-reef-and-fish-4002-large.mp4";
+  const RIVER_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-clear-water-stream-flowing-between-rocks-4006-large.mp4";
 
   return (
     <main className="w-full bg-[#0B1F2A] text-white selection:bg-sky-400/30 overflow-x-hidden scroll-smooth">
@@ -44,7 +45,7 @@ export default function Home() {
         >
           <source src={HERO_VIDEO} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-[#0B1F2A]/20" />
+        <div className="absolute inset-0 bg-[#0B1F2A]/30" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <h1 className="flex flex-col mb-8">
             <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9]">NO SMELL.</span>
