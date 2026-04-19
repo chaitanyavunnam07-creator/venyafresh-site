@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="w-full bg-[#0B1F2A] text-white selection:bg-sky-400/30 overflow-x-hidden scroll-smooth">
       
-      {/* 1. NAVIGATION - Floating over full-bleed video */}
+      {/* 1. NAVIGATION */}
       <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 py-10 bg-gradient-to-b from-[#0B1F2A]/80 to-transparent">
         <div className="flex w-1/3 justify-start">
           <button className="text-slate-300 hover:text-white transition-colors">
@@ -34,15 +34,21 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* SECTION 1: HERO - Edge-to-Edge Full Bleed */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover">
+      {/* SECTION 1: HERO - Fixed scaling to remove borders */}
+      <section className="relative h-screen w-full overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0 h-full w-full">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover scale-[1.02]"
+          >
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
-          {/* Subtle overlay to ensure text readability while remaining edge-to-edge */}
-          <div className="absolute inset-0 bg-[#0B1F2A]/30" />
+          <div className="absolute inset-0 bg-[#0B1F2A]/20" />
         </div>
+        
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <h1 className="flex flex-col mb-8 drop-shadow-2xl">
             <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">NO SMELL.</span>
@@ -62,10 +68,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2: CONVENIENCE - Edge-to-Edge Full Bleed */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover grayscale opacity-40">
+      {/* SECTION 2: CONVENIENCE */}
+      <section className="relative h-screen w-full overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0 h-full w-full">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover scale-[1.02] grayscale opacity-40"
+          >
             <source src={PROCESS_VIDEO} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-[#0B1F2A]/60" />
@@ -86,10 +98,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 3: MALPE - Edge-to-Edge */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover">
+      {/* REST OF SECTIONS FOLLOW SAME PATTERN... */}
+      {/* SECTION 3: MALPE */}
+      <section className="relative h-screen w-full overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0 h-full w-full">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover scale-[1.02]"
+          >
             <source src={MALPE_VIDEO} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-[#0B1F2A]/50" />
@@ -106,46 +125,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 4: ANDAMAN (Launching Soon) - Edge-to-Edge */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover grayscale opacity-30">
+      {/* SECTION 4: ANDAMAN */}
+      <section className="relative h-screen w-full overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0 h-full w-full">
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline 
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover scale-[1.02] grayscale opacity-30"
+          >
             <source src={ANDAMAN_VIDEO} type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-[#0B1F2A]/70" />
         </div>
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <div className="mb-6 px-6 py-2 border border-slate-500/30 rounded-full bg-slate-800/20 backdrop-blur-md">
-            <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
-          </div>
-          <span className="text-slate-500 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Deep Sea Treasures</span>
-          <h2 className="text-6xl md:text-9xl font-black tracking-tighter uppercase mb-8 text-white/30 leading-none">ANDAMAN <br /> <span className="text-slate-500/30">RESERVE</span></h2>
-          <button className="px-12 py-4 border border-slate-700 text-slate-600 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
-            Notify Me
-          </button>
-        </div>
-      </section>
-
-      {/* SECTION 5: RIVER (Launching Soon) - Edge-to-Edge */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover grayscale opacity-30">
-            <source src={RIVER_VIDEO} type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-[#0B1F2A]/70" />
-        </div>
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <div className="mb-6 px-6 py-2 border border-slate-500/30 rounded-full bg-slate-800/20 backdrop-blur-md">
-            <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
-          </div>
-          <span className="text-slate-500 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Freshwater Harvest</span>
-          <h2 className="text-6xl md:text-9xl font-black tracking-tighter uppercase mb-8 text-white/30 leading-none">RIVER <br /> <span className="text-slate-500/30">CATCH</span></h2>
-          <button className="px-12 py-4 border border-slate-700 text-slate-600 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
-            Notify Me
-          </button>
-        </div>
-      </section>
-
-    </main>
-  );
-}
+        <div className="relative z-10 h-full flex flex-col items-center
