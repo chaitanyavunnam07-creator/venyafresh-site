@@ -12,119 +12,121 @@ export default function Home() {
   const RIVER_VIDEO = "https://res.cloudinary.com/demo/video/upload/river_flow.mp4";
 
   return (
-    <main className="w-full bg-[#0B1F2A] text-white selection:bg-sky-400/30 overflow-x-hidden scroll-smooth">
+    <main className="w-full bg-[#0B1F2A] text-white overflow-x-hidden scroll-smooth">
       
-      {/* 1. NAVIGATION */}
+      {/* NAVIGATION */}
       <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 pt-10 pb-10 bg-gradient-to-b from-[#0B1F2A]/95 via-[#0B1F2A]/60 to-transparent backdrop-blur-sm">
         <div className="flex w-1/3 justify-start">
           <button className="text-slate-300 hover:text-white transition-colors">
-            <Menu size={24} strokeWidth={1.5} />
+            <Menu size={24} />
           </button>
         </div>
 
-        <div className="absolute left-1/2 top-10 -translate-x-1/2 flex items-center text-2xl font-serif italic tracking-tight">
+        <div className="absolute left-1/2 top-10 -translate-x-1/2 flex items-center text-2xl font-serif italic">
           <span className="text-white font-bold">Venya</span>
-          <span className="text-sky-400 ml-0.5">Fresh</span>
+          <span className="text-sky-400 ml-1">Fresh</span>
         </div>
 
         <div className="flex w-1/3 justify-end gap-5 items-center text-slate-300">
-          <Search size={22} strokeWidth={1.5} />
+          <Search size={22} />
           <div className="relative">
-            <ShoppingBag size={22} strokeWidth={1.5} />
-            <span className="absolute -top-1 -right-1 bg-sky-400 text-[#0B1F2A] text-[8px] font-black h-4 w-4 flex items-center justify-center rounded-full">
+            <ShoppingBag size={22} />
+            <span className="absolute -top-1 -right-1 bg-sky-400 text-black text-[8px] font-bold h-4 w-4 flex items-center justify-center rounded-full">
               0
             </span>
           </div>
         </div>
       </nav>
 
-      {/* SECTION 1: HERO (FIXED FULL SCREEN VIDEO) */}
+      {/* HERO */}
       <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover"
-          >
-            <source src={HERO_VIDEO} type="video/mp4" />
-          </video>
+        
+        {/* VIDEO BACKGROUND */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        >
+          <source src={HERO_VIDEO} type="video/mp4" />
+        </video>
 
-          {/* subtle overlay for readability */}
-          <div className="absolute inset-0 bg-black/20" />
-        </div>
+        {/* LIGHT OVERLAY (NOT HEAVY) */}
+        <div className="absolute inset-0 bg-black/30 z-10" />
 
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="flex flex-col mb-6 drop-shadow-xl">
-            <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
-              NO SMELL.
-            </span>
-            <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
-              NO MESS.
-            </span>
+        {/* CONTENT */}
+        <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
+          <h1 className="flex flex-col mb-6">
+            <span className="text-[10vw] md:text-7xl font-black uppercase">NO SMELL.</span>
+            <span className="text-[10vw] md:text-7xl font-black uppercase">NO MESS.</span>
             <div className="flex items-center justify-center gap-2 py-1">
-              <span className="text-[8vw] md:text-6xl text-sky-400 italic font-serif lowercase">
-                just
-              </span>
-              <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">
-                FRESH
-              </span>
+              <span className="text-[8vw] md:text-6xl text-sky-400 italic lowercase">just</span>
+              <span className="text-[10vw] md:text-7xl font-black uppercase">FRESH</span>
             </div>
-            <span className="text-[12vw] md:text-8xl font-black tracking-tighter uppercase leading-[0.8] text-slate-300">
+            <span className="text-[12vw] md:text-8xl font-black uppercase text-slate-300">
               SEAFOOD.
             </span>
           </h1>
 
           <Link href="/order">
-            <button className="px-12 py-3.5 bg-sky-400 text-[#0B1F2A] text-[10px] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all shadow-xl rounded-full">
+            <button className="px-12 py-3.5 bg-sky-400 text-black text-[10px] font-black uppercase tracking-widest rounded-full">
               Order Prawns & Fish
             </button>
           </Link>
         </div>
       </section>
 
-      {/* SECTION 2: CONVENIENCE */}
-      <section className="relative min-h-screen w-full overflow-hidden border-t border-slate-800 bg-[#111827] pt-48 pb-24">
+      {/* SECTION 2 */}
+      <section className="relative min-h-screen w-full border-t border-slate-800 bg-[#111827] pt-48 pb-24">
         <div className="absolute inset-0 z-0">
           <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-20 grayscale">
             <source src={PROCESS_VIDEO} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111827] via-transparent to-[#111827]" />
         </div>
 
-        <div className="relative z-10 flex flex-col items-center justify-start text-center px-8">
-          <h2 className="text-sky-400 text-[10px] font-bold tracking-[0.6em] mb-4 uppercase">
+        <div className="relative z-10 text-center px-8">
+          <h2 className="text-sky-400 text-[10px] tracking-widest mb-4 uppercase">
             THE CONVENIENCE FACTOR
           </h2>
-          <h3 className="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase mb-16 text-white">
-            KITCHEN READY, <br /> COASTAL FRESH
+          <h3 className="text-3xl md:text-5xl font-extrabold uppercase mb-16">
+            KITCHEN READY <br /> COASTAL FRESH
           </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl w-full">
-            <div className="border-l border-slate-600 pl-6 text-left">
-              <h4 className="text-white text-xs font-bold uppercase italic font-serif mb-2">
-                Zero Preparation
-              </h4>
-              <p className="text-slate-400 text-[10px] uppercase font-bold">
-                De-veined prawns and descaled fish. Open the pack and start cooking.
-              </p>
-            </div>
-
-            <div className="border-l border-slate-600 pl-6 text-left">
-              <h4 className="text-white text-xs font-bold uppercase italic font-serif mb-2">
-                Odor-Lock Tech
-              </h4>
-              <p className="text-slate-400 text-[10px] uppercase font-bold">
-                Vacuum sealed at sub-zero temperatures to ensure your fridge stays fresh.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* SECTION 3, 4, 5 remain EXACT SAME as your original */}
+      {/* MALPE */}
+      <section className="relative h-screen w-full">
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src={MALPE_VIDEO} />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <h2 className="text-5xl font-black">MALPE</h2>
+        </div>
+      </section>
+
+      {/* ANDAMAN */}
+      <section className="relative h-screen w-full">
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src={ANDAMAN_VIDEO} />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <h2 className="text-5xl font-black">ANDAMAN</h2>
+        </div>
+      </section>
+
+      {/* RIVER */}
+      <section className="relative h-screen w-full">
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src={RIVER_VIDEO} />
+        </video>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex items-center justify-center h-full">
+          <h2 className="text-5xl font-black">RIVER</h2>
+        </div>
+      </section>
 
     </main>
   );
