@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Home() {
   // RELIABLE PUBLIC OCEANIC VIDEOS
   const HERO_VIDEO = "https://player.vimeo.com/external/434045526.sd.mp4?s=c27cf3496335661900ef673c7930842279fda677&profile_id=164&oauth2_token_id=57447761"; // Deep Blue Waves
-  const PROCESS_VIDEO = "https://player.vimeo.com/external/441459496.sd.mp4?s=d94a9740521ca49e8a7167667d4f9547b74465d6&profile_id=164&oauth2_token_id=57447761"; // Ice/Processing feel
+  const PROCESS_VIDEO = "https://l8fniptaja7gvhx6.public.blob.vercel-storage.com/12691240_3840_2160_24fps.mp4"; // Ice/Processing feel
   const MALPE_VIDEO = "https://player.vimeo.com/external/394333066.sd.mp4?s=25488427f7173b22b15277f24098674d89069d5f&profile_id=164&oauth2_token_id=57447761"; // Boat on Blue Water
   const ANDAMAN_VIDEO = "https://player.vimeo.com/external/370364843.sd.mp4?s=2924976c6665c363a0335e38e1a1796d747c0d2a&profile_id=164&oauth2_token_id=57447761"; // Underwater Coral
   const RIVER_VIDEO = "https://player.vimeo.com/external/517090025.sd.mp4?s=0e3c5452f144d18306059d08e5e786b364e7c703&profile_id=164&oauth2_token_id=57447761"; // Freshwater stream
