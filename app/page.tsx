@@ -5,12 +5,12 @@ import { Search, ShoppingBag, Menu } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
-  // NEW CINEMATIC SEAFOOD & OCEAN VIDEOS
-  const HERO_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-blue-ocean-water-surface-4001-large.mp4";
-  const PROCESS_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-chef-cleaning-a-fresh-fish-40546-large.mp4"; 
-  const MALPE_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-fishing-boat-sailing-in-the-ocean-4003-large.mp4";
-  const ANDAMAN_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-underwater-shot-of-a-coral-reef-and-fish-4002-large.mp4";
-  const RIVER_VIDEO = "https://assets.mixkit.co/videos/preview/mixkit-clear-water-stream-flowing-between-rocks-4006-large.mp4";
+  // RELIABLE PUBLIC OCEANIC VIDEOS
+  const HERO_VIDEO = "https://player.vimeo.com/external/434045526.sd.mp4?s=c27cf3496335661900ef673c7930842279fda677&profile_id=164&oauth2_token_id=57447761"; // Deep Blue Waves
+  const PROCESS_VIDEO = "https://player.vimeo.com/external/441459496.sd.mp4?s=d94a9740521ca49e8a7167667d4f9547b74465d6&profile_id=164&oauth2_token_id=57447761"; // Ice/Processing feel
+  const MALPE_VIDEO = "https://player.vimeo.com/external/394333066.sd.mp4?s=25488427f7173b22b15277f24098674d89069d5f&profile_id=164&oauth2_token_id=57447761"; // Boat on Blue Water
+  const ANDAMAN_VIDEO = "https://player.vimeo.com/external/370364843.sd.mp4?s=2924976c6665c363a0335e38e1a1796d747c0d2a&profile_id=164&oauth2_token_id=57447761"; // Underwater Coral
+  const RIVER_VIDEO = "https://player.vimeo.com/external/517090025.sd.mp4?s=0e3c5452f144d18306059d08e5e786b364e7c703&profile_id=164&oauth2_token_id=57447761"; // Freshwater stream
 
   return (
     <main className="w-full bg-[#0B1F2A] text-white selection:bg-sky-400/30 overflow-x-hidden scroll-smooth">
@@ -35,14 +35,8 @@ export default function Home() {
       </nav>
 
       {/* SECTION 1: HERO */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover scale-[1.05]"
-        >
+      <section className="relative h-screen w-full overflow-hidden bg-black">
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05]">
           <source src={HERO_VIDEO} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-[#0B1F2A]/30" />
@@ -65,7 +59,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: CONVENIENCE */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden bg-black">
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05] grayscale opacity-40">
           <source src={PROCESS_VIDEO} type="video/mp4" />
         </video>
@@ -87,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: MALPE */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden bg-black">
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05]">
           <source src={MALPE_VIDEO} type="video/mp4" />
         </video>
@@ -104,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 4: ANDAMAN */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden bg-black">
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05] grayscale opacity-30">
           <source src={ANDAMAN_VIDEO} type="video/mp4" />
         </video>
@@ -121,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: RIVER */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-screen w-full overflow-hidden bg-black">
         <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05] grayscale opacity-30">
           <source src={RIVER_VIDEO} type="video/mp4" />
         </video>
