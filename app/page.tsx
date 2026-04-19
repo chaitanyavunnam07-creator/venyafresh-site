@@ -14,8 +14,8 @@ export default function Home() {
   return (
     <main className="w-full bg-[#0B1F2A] text-white selection:bg-sky-400/30 overflow-x-hidden scroll-smooth">
       
-      {/* 1. NAVIGATION */}
-      <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 pt-10 pb-10 bg-gradient-to-b from-[#0B1F2A]/95 via-[#0B1F2A]/60 to-transparent backdrop-blur-sm">
+      {/* 1. NAVIGATION - Floating over full-bleed video */}
+      <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between px-6 py-10 bg-gradient-to-b from-[#0B1F2A]/80 to-transparent">
         <div className="flex w-1/3 justify-start">
           <button className="text-slate-300 hover:text-white transition-colors">
             <Menu size={24} strokeWidth={1.5} />
@@ -34,16 +34,17 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* SECTION 1: HERO */}
-      <section className="relative h-screen w-full overflow-hidden bg-[#0F2A38]">
+      {/* SECTION 1: HERO - Edge-to-Edge Full Bleed */}
+      <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-70 scale-105">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F2A] via-transparent to-[#0B1F2A]" />
+          {/* Subtle overlay to ensure text readability while remaining edge-to-edge */}
+          <div className="absolute inset-0 bg-[#0B1F2A]/30" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="flex flex-col mb-6 drop-shadow-xl">
+          <h1 className="flex flex-col mb-8 drop-shadow-2xl">
             <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">NO SMELL.</span>
             <span className="text-[10vw] md:text-7xl font-black tracking-tighter uppercase leading-[0.9] text-white">NO MESS.</span>
             <div className="flex items-center justify-center gap-2 py-1">
@@ -54,92 +55,92 @@ export default function Home() {
           </h1>
           
           <Link href="/order">
-            <button className="px-12 py-3.5 bg-sky-400 text-[#0B1F2A] text-[10px] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all shadow-xl rounded-full">
+            <button className="px-12 py-4 bg-sky-400 text-[#0B1F2A] text-[10px] font-black uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all shadow-2xl rounded-full">
               Order Prawns & Fish
             </button>
           </Link>
         </div>
       </section>
 
-      {/* SECTION 2: CONVENIENCE */}
-      <section className="relative min-h-screen w-full overflow-hidden border-t border-slate-800 bg-[#111827] pt-48 pb-24">
+      {/* SECTION 2: CONVENIENCE - Edge-to-Edge Full Bleed */}
+      <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-20 grayscale">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover grayscale opacity-40">
             <source src={PROCESS_VIDEO} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#111827] via-transparent to-[#111827]" />
+          <div className="absolute inset-0 bg-[#0B1F2A]/60" />
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-start text-center px-8">
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8">
           <h2 className="text-sky-400 text-[10px] font-bold tracking-[0.6em] mb-4 uppercase">THE CONVENIENCE FACTOR</h2>
-          <h3 className="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase mb-16 text-white">KITCHEN READY, <br /> COASTAL FRESH</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-2xl w-full">
-            <div className="border-l border-slate-600 pl-6 text-left">
-              <h4 className="text-white text-xs font-bold uppercase italic font-serif mb-2">Zero Preparation</h4>
-              <p className="text-slate-400 text-[10px] uppercase font-bold">De-veined prawns and descaled fish. Open the pack and start cooking.</p>
+          <h3 className="text-4xl md:text-6xl font-extrabold tracking-tighter uppercase mb-16 text-white max-w-4xl">KITCHEN READY, <br /> COASTAL FRESH</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-3xl w-full">
+            <div className="border-l border-slate-500/50 pl-6 text-left">
+              <h4 className="text-white text-sm font-bold uppercase italic font-serif mb-2 tracking-tight">Zero Preparation</h4>
+              <p className="text-slate-300 text-[11px] uppercase font-bold leading-relaxed tracking-wide">De-veined prawns and descaled fish. Open the pack and start cooking.</p>
             </div>
-            <div className="border-l border-slate-600 pl-6 text-left">
-              <h4 className="text-white text-xs font-bold uppercase italic font-serif mb-2">Odor-Lock Tech</h4>
-              <p className="text-slate-400 text-[10px] uppercase font-bold">Vacuum sealed at sub-zero temperatures to ensure your fridge stays fresh.</p>
+            <div className="border-l border-slate-500/50 pl-6 text-left">
+              <h4 className="text-white text-sm font-bold uppercase italic font-serif mb-2 tracking-tight">Odor-Lock Tech</h4>
+              <p className="text-slate-300 text-[11px] uppercase font-bold leading-relaxed tracking-wide">Vacuum sealed at sub-zero temperatures to ensure your fridge stays fresh.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: MALPE */}
-      <section className="relative h-screen w-full overflow-hidden border-t border-slate-800 bg-[#0B1F2A]">
+      {/* SECTION 3: MALPE - Edge-to-Edge */}
+      <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-60">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover">
             <source src={MALPE_VIDEO} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F2A]/80 via-transparent to-[#0B1F2A]" />
+          <div className="absolute inset-0 bg-[#0B1F2A]/50" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
           <span className="text-sky-400 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">The Coastal Pride</span>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 text-white">MALPE <br /> <span className="text-slate-400 font-black">SIGNATURE</span></h2>
+          <h2 className="text-6xl md:text-9xl font-black tracking-tighter uppercase mb-8 text-white leading-none">MALPE <br /> <span className="text-slate-400">SIGNATURE</span></h2>
           
           <Link href="/order">
-            <button className="px-12 py-4 border border-slate-500 bg-slate-700/10 backdrop-blur-md text-slate-300 text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all rounded-full">
+            <button className="px-12 py-4 border border-slate-400 bg-white/10 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-[0.4em] hover:bg-white hover:text-black transition-all rounded-full">
               Order Malpe Catch
             </button>
           </Link>
         </div>
       </section>
 
-      {/* SECTION 4: ANDAMAN */}
-      <section className="relative h-screen w-full overflow-hidden border-t border-slate-800 bg-[#0B1F2A]">
+      {/* SECTION 4: ANDAMAN (Launching Soon) - Edge-to-Edge */}
+      <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover grayscale opacity-30">
             <source src={ANDAMAN_VIDEO} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F2A] via-transparent to-[#0B1F2A]" />
+          <div className="absolute inset-0 bg-[#0B1F2A]/70" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <div className="mb-6 px-5 py-1.5 border border-slate-600 rounded-full bg-slate-700/10 backdrop-blur-md">
+          <div className="mb-6 px-6 py-2 border border-slate-500/30 rounded-full bg-slate-800/20 backdrop-blur-md">
             <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
           </div>
           <span className="text-slate-500 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Deep Sea Treasures</span>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-white">ANDAMAN <br /> <span className="font-black text-slate-500">RESERVE</span></h2>
-          <button className="px-12 py-4 border border-slate-600 text-slate-500 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
+          <h2 className="text-6xl md:text-9xl font-black tracking-tighter uppercase mb-8 text-white/30 leading-none">ANDAMAN <br /> <span className="text-slate-500/30">RESERVE</span></h2>
+          <button className="px-12 py-4 border border-slate-700 text-slate-600 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
             Notify Me
           </button>
         </div>
       </section>
 
-      {/* SECTION 5: RIVER */}
-      <section className="relative h-screen w-full overflow-hidden border-t border-slate-800 bg-[#0B1F2A]">
+      {/* SECTION 5: RIVER (Launching Soon) - Edge-to-Edge */}
+      <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <video autoPlay muted loop playsInline className="h-full w-full object-cover opacity-40 grayscale">
+          <video autoPlay muted loop playsInline className="h-full w-full object-cover grayscale opacity-30">
             <source src={RIVER_VIDEO} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1F2A] via-transparent to-[#0B1F2A]" />
+          <div className="absolute inset-0 bg-[#0B1F2A]/70" />
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          <div className="mb-6 px-5 py-1.5 border border-slate-600 rounded-full bg-slate-700/10 backdrop-blur-md">
+          <div className="mb-6 px-6 py-2 border border-slate-500/30 rounded-full bg-slate-800/20 backdrop-blur-md">
             <span className="text-slate-400 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span>
           </div>
           <span className="text-slate-500 text-[10px] font-bold tracking-[0.6em] uppercase mb-4">Freshwater Harvest</span>
-          <h2 className="text-5xl md:text-8xl font-black tracking-tighter uppercase mb-8 opacity-40 text-white">RIVER <br /> <span className="font-black text-slate-500">CATCH</span></h2>
-          <button className="px-12 py-4 border border-slate-600 text-slate-500 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
+          <h2 className="text-6xl md:text-9xl font-black tracking-tighter uppercase mb-8 text-white/30 leading-none">RIVER <br /> <span className="text-slate-500/30">CATCH</span></h2>
+          <button className="px-12 py-4 border border-slate-700 text-slate-600 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full">
             Notify Me
           </button>
         </div>
