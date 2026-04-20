@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <>
       <main className="w-full bg-[#0B1F2A] text-white selection:bg-sky-400/30 overflow-x-hidden scroll-smooth">
+        {/* NAVIGATION */}
         <nav className="fixed top-0 left-0 z-50 w-full bg-transparent px-4 md:px-8 py-6 md:py-10">
           <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
             <div className="flex w-1/4 justify-start">
@@ -20,7 +21,7 @@ export default function Home() {
                 <span className="text-sky-400 ml-1">Fresh</span>
               </div>
             </div>
-            <div className="flex w-1/4 justify-end gap-4 md:gap-6 items-center text-white drop-shadow-xl">
+            <div className="flex w-1/3 md:w-1/4 justify-end gap-4 md:gap-6 items-center text-white drop-shadow-xl">
               <Search size={22} strokeWidth={1.5} className="cursor-pointer hover:text-sky-400" />
               <div className="relative cursor-pointer hover:text-sky-400">
                 <ShoppingBag size={22} strokeWidth={1.5} />
@@ -29,6 +30,8 @@ export default function Home() {
             </div>
           </div>
         </nav>
+
+        {/* SECTION 1: HERO */}
         <section className="relative h-screen w-full overflow-hidden bg-black">
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05]">
             <source src="https://l8fniptaja7gvhx6.public.blob.vercel-storage.com/13499555_3840_2160_60fps.mp4" type="video/mp4" />
@@ -51,6 +54,8 @@ export default function Home() {
             </Link>
           </div>
         </section>
+
+        {/* SECTION 2: CONVENIENCE */}
         <section className="relative h-screen w-full overflow-hidden bg-black border-t border-white/10">
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05]">
             <source src="https://l8fniptaja7gvhx6.public.blob.vercel-storage.com/12691240_3840_2160_24fps.mp4" type="video/mp4" />
@@ -71,6 +76,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* SECTION 3: MALPE */}
         <section className="relative h-screen w-full overflow-hidden bg-black border-t border-white/10">
           <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05]">
             <source src="https://l8fniptaja7gvhx6.public.blob.vercel-storage.com/14140407_3840_2160_30fps.mp4" type="video/mp4" />
@@ -84,7 +91,26 @@ export default function Home() {
             </Link>
           </div>
         </section>
-      </main>
-    </>
-  );
-}
+
+        {/* SECTION 4: ANDAMAN */}
+        <section className="relative h-screen w-full overflow-hidden bg-black border-t border-white/10">
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05]">
+            <source src="https://l8fniptaja7gvhx6.public.blob.vercel-storage.com/13499555_3840_2160_60fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+            <div className="mb-6 px-6 py-2 border border-sky-400/50 rounded-full bg-black/40 backdrop-blur-md"><span className="text-sky-400 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span></div>
+            <h2 className="text-5xl md:text-9xl font-black tracking-tighter uppercase mb-8 text-white/40 leading-none drop-shadow-xl">ANDAMAN <br /> <span className="text-white/20">RESERVE</span></h2>
+            <button className="px-12 py-4 border border-white/20 text-white/40 text-[10px] font-bold uppercase tracking-[0.4em] cursor-not-allowed rounded-full bg-black/20">Notify Me</button>
+          </div>
+        </section>
+
+        {/* SECTION 5: RIVER */}
+        <section className="relative h-screen w-full overflow-hidden bg-black border-t border-white/10">
+          <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover scale-[1.05]">
+            <source src="https://l8fniptaja7gvhx6.public.blob.vercel-storage.com/13499555_3840_2160_60fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+            <div className="mb-6 px-6 py-2 border border-sky-400/50 rounded-full bg-black/40 backdrop-blur-md"><span className="text-sky-400 text-[10px] font-black uppercase tracking-[0.5em]">Launching Soon</span></div>
+            <h2 className="text-5xl md:text-9xl font-black tracking-tighter uppercase mb-8 text
