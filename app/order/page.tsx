@@ -13,7 +13,6 @@ const PRODUCTS = [
 function OrderContent() {
   const [activeSource, setActiveSource] = useState("ALL CATCH");
   const [cart, setCart] = useState<{id: number, qty: number}[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
 
   const filtered = activeSource === "ALL CATCH" 
     ? PRODUCTS 
@@ -24,34 +23,36 @@ function OrderContent() {
       const exists = prev.find(i => i.id === id);
       return exists ? prev.map(i => i.id === id ? { ...i, qty: i.qty + 1 } : i) : [...prev, { id, qty: 1 }];
     });
-    setIsOpen(true);
   };
 
+  const totalQty = cart.reduce((acc, item) => acc + item.qty, 0);
+  const totalPrice = cart.reduce((acc, item) => {
+    const p = PRODUCTS.find(prod => prod.id === item.id);
+    return acc + (p ? p.price * item.qty : 0);
+  }, 0);
+
   return (
-    <main className="min-h-screen bg-[#0B1F2A] text-white font-sans selection:bg-sky-400/30">
+    <main className="min-h-screen bg-[#0B1F2A] text-white font-sans selection:bg-sky-400/30 relative">
       
-      {/* 1. HEADER & DYNAMIC FILTER BAR */}
+      {/* 1. HEADER & TOP NAV */}
       <nav className="fixed top-0 left-0 z-50 w-full bg-[#0B1F2A]/95 backdrop-blur-xl border-b border-white/5">
-        <div className="px-6 py-5 flex justify-between items-center border-b border-white/5">
-          <Link href="/" className="text-white hover:text-sky-400">
+        <div className="px-6 py-5 flex justify-between items-center">
+          <Link href="/" className="text-white hover:text-sky-400 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m15 18-6-6 6-6"/></svg>
           </Link>
           <div className="text-xl font-serif italic font-bold">Venya<span className="text-sky-400">Fresh</span></div>
-          <button onClick={() => setIsOpen(true)} className="relative">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4ZM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
-            <span className="absolute -top-1 -right-1 bg-sky-400 text-black text-[9px] font-black h-4 w-4 flex items-center justify-center rounded-full">{cart.length}</span>
-          </button>
+          <div className="w-6" /> {/* Spacer */}
         </div>
 
-        {/* SWIGGY-STYLE TAB BAR */}
-        <div className="flex overflow-x-auto no-scrollbar gap-2 px-6 py-4 bg-[#0B1F2A]/50">
+        {/* HORIZONTAL TAB BAR */}
+        <div className="flex overflow-x-auto no-scrollbar gap-2 px-6 py-4 border-t border-white/5 bg-[#0B1F2A]/50">
           {SOURCES.map((source) => (
             <button
               key={source}
               onClick={() => setActiveSource(source)}
               className={`whitespace-nowrap px-6 py-2.5 rounded-full text-[10px] font-black tracking-widest transition-all duration-300 border ${
                 activeSource === source 
-                ? "bg-sky-400 border-sky-400 text-[#0B1F2A] shadow-[0_0_20px_rgba(56,189,248,0.3)]" 
+                ? "bg-sky-400 border-sky-400 text-[#0B1F2A]" 
                 : "bg-white/5 border-white/10 text-white/60 hover:border-white/30"
               }`}
             >
@@ -62,65 +63,52 @@ function OrderContent() {
       </nav>
 
       {/* 2. PRODUCT GRID */}
-      <div className="pt-44 pb-20 px-6 max-w-screen-xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {filtered.length > 0 ? (
-            filtered.map((item) => (
-              <div key={item.id} className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:border-sky-400/30 transition-all duration-500 shadow-2xl">
-                <div className="aspect-[4/5] overflow-hidden relative">
-                  <img src={item.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
-                  <div className="absolute top-4 right-4 bg-sky-400 text-black text-[9px] font-black px-3 py-1 rounded-full uppercase shadow-lg">{item.source}</div>
-                </div>
-                <div className="p-8">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-extrabold uppercase text-lg leading-tight tracking-tighter">{item.name}</h3>
-                    <span className="text-sky-400 font-bold">₹{item.price}</span>
-                  </div>
-                  <p className="text-white/40 text-[11px] mb-6 uppercase tracking-wider leading-relaxed">{item.desc}</p>
-                  <button onClick={() => addItem(item.id)} className="w-full py-4 bg-sky-400 text-black font-black rounded-2xl uppercase text-[10px] tracking-widest hover:bg-white transition-all shadow-lg active:scale-95">Add to Basket</button>
-                </div>
+      <div className="pt-44 px-6 max-w-screen-xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filtered.map((item) => (
+            <div key={item.id} className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/5] relative">
+                <img src={item.image} className="w-full h-full object-cover opacity-90" />
+                <div className="absolute top-4 right-4 bg-sky-400 text-black text-[9px] font-black px-3 py-1 rounded-full uppercase">{item.source}</div>
               </div>
-            ))
-          ) : (
-            <div className="col-span-full py-20 text-center">
-              <p className="text-white/20 text-xs font-black uppercase tracking-[0.5em]">No catch available for this source yet</p>
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-extrabold uppercase text-lg leading-tight">{item.name}</h3>
+                  <span className="text-sky-400 font-bold">₹{item.price}</span>
+                </div>
+                <p className="text-white/40 text-[11px] mb-6 uppercase tracking-wider">{item.desc}</p>
+                <button onClick={() => addItem(item.id)} className="w-full py-4 bg-sky-400 text-black font-black rounded-2xl uppercase text-[10px] tracking-widest active:scale-95 transition-all">Add to Basket</button>
+              </div>
             </div>
-          )}
+          ))}
         </div>
+
+        {/* 3. SCROLL BUFFER (So the last card isn't hidden by the floating cart) */}
+        <div className="h-40 w-full" />
       </div>
 
-      {/* 3. CART DRAWER (Simplified for Build) */}
-      <div className={`fixed inset-y-0 right-0 z-[100] w-full md:w-[450px] bg-[#0B1F2A] border-l border-white/10 transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="p-8 h-full flex flex-col">
-          <div className="flex justify-between items-center mb-10">
-            <h2 className="text-2xl font-black uppercase tracking-tighter">Your Basket</h2>
-            <button onClick={() => setIsOpen(false)} className="text-white/40 font-bold uppercase text-[10px]">Close</button>
+      {/* 4. PERSISTENT BOTTOM CART (Instamart Style) */}
+      {cart.length > 0 && (
+        <div className="fixed bottom-6 left-0 w-full px-6 z-[60] animate-in slide-in-from-bottom-10 duration-300">
+          <div className="max-w-md mx-auto bg-sky-400 p-4 rounded-2xl flex justify-between items-center shadow-[0_20px_50px_rgba(56,189,248,0.4)]">
+            <div className="flex flex-col">
+              <span className="text-[#0B1F2A] text-[10px] font-black uppercase tracking-widest">{totalQty} ITEMS</span>
+              <span className="text-[#0B1F2A] text-lg font-black tracking-tighter">₹{totalPrice}</span>
+            </div>
+            <button className="flex items-center gap-2 bg-[#0B1F2A] text-white px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-black transition-colors">
+              View Basket
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
           </div>
-          <div className="flex-1 overflow-y-auto space-y-6">
-            {cart.map(item => {
-              const p = PRODUCTS.find(prod => prod.id === item.id)!;
-              return (
-                <div key={item.id} className="flex gap-4 items-center bg-white/5 p-4 rounded-2xl">
-                  <img src={p.image} className="w-16 h-16 object-cover rounded-xl" />
-                  <div className="flex-1">
-                    <p className="text-[11px] font-bold uppercase">{p.name}</p>
-                    <p className="text-sky-400 font-bold">₹{p.price * item.qty}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-          <button className="mt-auto w-full py-5 bg-sky-400 text-black font-black uppercase text-[10px] rounded-2xl shadow-xl">Secure Checkout</button>
         </div>
-      </div>
-      {isOpen && <div onClick={() => setIsOpen(false)} className="fixed inset-0 z-[90] bg-black/60 backdrop-blur-md" />}
+      )}
     </main>
   );
 }
 
 export default function OrderPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div className="bg-[#0B1F2A] min-h-screen" />}>
       <OrderContent />
     </Suspense>
   );
